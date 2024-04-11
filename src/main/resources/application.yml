@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: spring-ai-rag-demo
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      # Note：OpenAiApi will splice："/v1/chat/completions"
+      base-url: ${OPENAI_BASE_URL}
+      chat:
+        options:
+          model: gpt-3.5-turbo
+          max-tokens: 1024
+          temperature: 0.7
+      embedding:
+        options:
+          model: 'text-embedding-ada-002'
+    vectorstore:
+      pgvector:
+        index-type: hnsw
+        distance-type: cosine_distance
+        dimensions: 1536

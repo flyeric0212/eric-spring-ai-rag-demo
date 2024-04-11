@@ -1,0 +1,20 @@
+### Test OpenAI connectivity
+GET http://localhost:8080/ai/generate
+
+### Clean Data
+DELETE http://localhost:8080/data/delete
+
+### Load Data
+POST http://localhost:8080/data/load
+
+### Count Data
+GET http://localhost:8080/data/count
+
+### RAG Test
+GET http://localhost:8080/rag
+
+### RAG Test TWO
+GET http://localhost:8080/rag?question=开源大模型食用指南主讲了什么？
+
+### Without RAG
+GET http://localhost:8080/rag?rag=false
